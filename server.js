@@ -34,6 +34,14 @@ connection.once('open', () => {
 app.use('/dashboard',dashboardRoute);
 app.use('/auth',authRoutes);
 */
+if(process.env.NODE_ENV ==='production'){
+  mongoose.connect(process.env.LINK, { useNewUrlParser: true, useUnifiedTopology:true });
+  const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+})
+}
+
 app.get('/',(req,res)=>{
     //res.render("home",{user:req.user});
    res.render("home");
