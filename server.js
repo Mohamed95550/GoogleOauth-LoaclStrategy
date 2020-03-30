@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-/*const authRoutes = require('./routes/authRoutes');
-const dashboardRoute = require ('./routes/dashboardRoute');
+const authRoutes = require('./routes/authRoutes');
+/*const dashboardRoute = require ('./routes/dashboardRoute');
 require('./config/passport-setup'); 
 const keys = require ('./config/keys');
 const cookieSession = require('cookie-session');
@@ -30,10 +30,10 @@ const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
-
-app.use('/dashboard',dashboardRoute);
-app.use('/auth',authRoutes);
 */
+//app.use('/dashboard',dashboardRoute);
+app.use('/auth',authRoutes);
+
 if(process.env.NODE_ENV ==='production'){
   mongoose.connect(process.env.LINK, { useNewUrlParser: true, useUnifiedTopology:true });
   const connection = mongoose.connection;
