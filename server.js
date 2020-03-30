@@ -34,7 +34,8 @@ app.use('/dashboard',dashboardRoute);
 app.use('/auth',authRoutes);
 */
 app.get('/',(req,res)=>{
-    res.render("home",{user:req.user});
+   // res.render("home",{user:req.user});
+   res.render("home");
 });
 
 app.listen(3000,()=>{
