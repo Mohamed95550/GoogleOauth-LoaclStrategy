@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const keys = require ('./config/keys');
 const cookieSession = require('cookie-session');
 const passport = require('passport');*/
+const PORT = process.env.PORT || 5000
 
 
 
@@ -34,10 +35,10 @@ app.use('/dashboard',dashboardRoute);
 app.use('/auth',authRoutes);
 */
 app.get('/',(req,res)=>{
-   // res.render("home",{user:req.user});
+    //res.render("home",{user:req.user});
    res.render("home");
 });
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('listen on port 3000');
 })
