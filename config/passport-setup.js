@@ -1,6 +1,6 @@
 const passport = require('passport');
 const googleStrategy = require('passport-google-oauth20').Strategy;
-const localStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 const keys = require('./keys');
 const User = require('../models/user'); 
 
@@ -13,32 +13,28 @@ passport.deserializeUser((id,done) => {
         done(null,user);
     })    
 })
-/*
-passport.use(new localStrategy({ username : 'username'},
+
+passport.use(new LocalStrategy({ username : 'username'},
 (username,password,done )=>{
-User.findOne({username:'Mrad Mohamed'})
+User.findOne({username:username})
     .then(user => {
-        if(!user){return done(null,false,{message:'not found!'})}*/
+        if(!user){return done(null,false,{message:'not found!'})}
      //  bcrypt.compare(password,user.password,(err, ismatch)=>{
        //     if(err){throw err}
          //   if(ismatch){return done(null,user)}
            // else{return done(null,false,{message:'email not registred!'})}
       // })
-   /*   else { return done(null,user)}
+     else { return done(null,user)}
     })
     .catch(err=>console.log(err))
 }))
 
-*/
 
 passport.use(new googleStrategy( {
     //options for google
-    /*callbackURL:'/auth/google/redirect',
-    clientID:keys.google.clientID,
-    clientSecret:keys.google.clientSecret*/
     callbackURL:'/auth/google/redirect',
-    clientID:process.env.GoogleID,
-    clientSecret:process.env.GoogleSecret
+    clientID:keys.google.clientID,
+    clientSecret:keys.google.clientSecret
 
 }, (accessToken,refreshToken,profile,done)=>{
     console.log(profile);

@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "12.16.1",
-    "npm": "6.13.4"
-  },
+  "engines":{
+    "node":"8.1.1",
+    "npm":"5.0.3" 
+  },  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
@@ -16,10 +16,10 @@
   "dependencies": {
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
-    "ejs": "^3.0.2",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "mongoose": "5.9.7",
-    "passport": "0.4.1",
+    "mongoose": "^5.9.6",
+    "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0"
   }

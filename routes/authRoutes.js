@@ -1,5 +1,5 @@
 const router = require('express').Router();
-//const passport = require('passport');
+const passport = require('passport');
 
 //route to login
 router.get('/login',(req,res)=>{
@@ -28,6 +28,15 @@ router.get('/google',passport.authenticate('google',{
       failureRedirect:'/' })(req,res,next);
   });
  */
+router.get('/success', (req, res) => res.send("Welcome "+req.query.username+"!!"));
+router.get('/error', (req, res) => res.send("error logging in"));
+
+router.post('/login',
+  passport.authenticate('local', { failureRedirect: '/auth/error',successRedirect:'/dashboard' }),
+  function(req, res) {
+    res.redirect('/auth/success?username='+req.user.username);
+    //res.send('connecte');
+  });
 
 module.exports= router;
 
