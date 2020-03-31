@@ -12,7 +12,7 @@ router.get('/logout',(req,res)=>{
     req.logOut();
     res.redirect('/');
 })
-/*
+
 router.get('/google/redirect',passport.authenticate('google'), (req, res) => {
     res.redirect('/dashboard/');
   });
@@ -21,13 +21,13 @@ router.get('/google/redirect',passport.authenticate('google'), (req, res) => {
 router.get('/google',passport.authenticate('google',{
     scope:['profile']
   }));
-  
+  /*
   router.post('/local',(req, res, next) => {
     passport.authenticate('local', {
       successRedirect:'/dashboard',
       failureRedirect:'/' })(req,res,next);
   });
- 
-*/
+ */
+
 module.exports= router;
 

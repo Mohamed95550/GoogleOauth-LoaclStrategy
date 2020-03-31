@@ -33,9 +33,13 @@ User.findOne({username:'Mrad Mohamed'})
 
 passport.use(new googleStrategy( {
     //options for google
-    callbackURL:'/auth/google/redirect',
+    /*callbackURL:'/auth/google/redirect',
     clientID:keys.google.clientID,
-    clientSecret:keys.google.clientSecret
+    clientSecret:keys.google.clientSecret*/
+    callbackURL:'/auth/google/redirect',
+    clientID:process.env.GoogleID,
+    clientSecret:process.env.GoogleSecret
+
 }, (accessToken,refreshToken,profile,done)=>{
     console.log(profile);
     //passport callback
