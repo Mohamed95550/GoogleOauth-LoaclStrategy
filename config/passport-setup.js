@@ -13,23 +13,23 @@ passport.deserializeUser((id,done) => {
         done(null,user);
     })    
 })
-
+/*
 passport.use(new localStrategy({ username : 'username'},
 (username,password,done )=>{
 User.findOne({username:'Mrad Mohamed'})
     .then(user => {
-        if(!user){return done(null,false,{message:'not found!'})}
-     /*  bcrypt.compare(password,user.password,(err, ismatch)=>{
-            if(err){throw err}
-            if(ismatch){return done(null,user)}
-            else{return done(null,false,{message:'email not registred!'})}
-       })*/
-      else { return done(null,user)}
+        if(!user){return done(null,false,{message:'not found!'})}*/
+     //  bcrypt.compare(password,user.password,(err, ismatch)=>{
+       //     if(err){throw err}
+         //   if(ismatch){return done(null,user)}
+           // else{return done(null,false,{message:'email not registred!'})}
+      // })
+   /*   else { return done(null,user)}
     })
     .catch(err=>console.log(err))
 }))
 
-
+*/
 
 passport.use(new googleStrategy( {
     //options for google
