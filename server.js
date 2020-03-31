@@ -44,7 +44,7 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 */
-//app.use('/dashboard',dashboardRoute);
+app.use('/dashboard',dashboardRoute);
 app.use('/auth',authRoutes);
 
 if(process.env.NODE_ENV ==='production'){
