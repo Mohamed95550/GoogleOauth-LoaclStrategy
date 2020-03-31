@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
-/*const dashboardRoute = require ('./routes/dashboardRoute');
+const dashboardRoute = require ('./routes/dashboardRoute');
 require('./config/passport-setup'); 
 const keys = require ('./config/keys');
 const cookieSession = require('cookie-session');
-const passport = require('passport');*/
+const passport = require('passport');
 const PORT = process.env.PORT || 5000
 /*
 http://localhost:3000
